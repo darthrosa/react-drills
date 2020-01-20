@@ -4,16 +4,15 @@ import NewTask from './Components/NewTask'
 import List from './Components/List'
 
 class App extends Component {
-  constructor() {
+  constructor(){
     super();
-
-    this.state = {
+    this.state= {
       list: []
     };
-    this.handleAddTask = this.handleAddTask.bind(this);
+    this.handleAddTask=this.handleAddTask.bind(this);
   }
 
-  handleAdd(task) {
+  handleAdd(task){
     this.setState({
       list:[...this.state.list, task]
     });
