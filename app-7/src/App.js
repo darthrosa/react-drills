@@ -3,14 +3,31 @@ import './App.css';
 import NewTask from './Components/NewTask'
 import List from './Components/List'
 
-function App() {
-  return (
-    <div className="App">
-      <NewTask/>
-      <List/>
+class App extends Component {
+  constructor() {
+    super();
 
-    </div>
-  );
+    this.state = {
+      list: []
+    };
+    this.handleAddTask = this.handleAddTask.bind(this);
+  }
+
+  handleAdd(task) {
+    this.setState({
+      list:[...this.state.list, task]
+    });
+  }
+
+  render(){
+    return(
+      <div className="App">
+        <h1>My to-do list:</h1>
+        <NewTask add={this.handleAddTask} />
+        <List tasks={this.state.list} />
+      </div>
+    );
+  }
 }
 
 export default App;

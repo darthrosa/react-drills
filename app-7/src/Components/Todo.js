@@ -4,7 +4,7 @@ class Todo extends Component {
     render(){
         return(
             <div>
-                Todo
+                {this.props.task}
             </div>
         )
     }
